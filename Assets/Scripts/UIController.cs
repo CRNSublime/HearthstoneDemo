@@ -10,6 +10,7 @@ public class UIController : Singleton<UIController> {
     float fixedTime = 0.05f;   // 间隔时间
     float arrowWidth = 0.4f;  // 箭头宽度
     float verticalWidth = 0.05f; // 箭头间断距离
+    Mesh arrowMesh = new Mesh();
 	private List<Vector3> GetParabolaPos(Vector3 startPos, Vector3 endPos)
     {
         List<Vector3> posList = new List<Vector3>();
@@ -98,11 +99,12 @@ public class UIController : Singleton<UIController> {
         triangles[index++] = count * 4 + 5;
         triangles[index++] = count * 4 + 6;
 
-        Mesh newMesh = new Mesh();
-        newMesh.vertices = vertices;
-        newMesh.uv = uv;
-        newMesh.triangles = triangles;
-        meshFilter.mesh = newMesh;
+        //Mesh newMesh = new Mesh();
+        arrowMesh.Clear();
+        arrowMesh.vertices = vertices;
+        arrowMesh.uv = uv;
+        arrowMesh.triangles = triangles;
+        meshFilter.mesh = arrowMesh;
     }
 
     public void InitArrowSign(GameObject arrow, Vector3 startPos, Vector3 endPos)

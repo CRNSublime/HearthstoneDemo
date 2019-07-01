@@ -7,7 +7,8 @@ public class PoolManager : Singleton<PoolManager> {
     List<HandCard> handCardsPool = new List<HandCard>();
     public void AddHandCardsPool(Card handCard)
     {
-        handCard.gameObject.SetActive(false);
+        //handCard.gameObject.SetActive(false);
+        handCard.transform.position = new Vector3(100, 100, 100);
         handCardsPool.Add((HandCard)handCard);
         handCard.transform.SetParent(GameData.hcPoolTrans);
     }
@@ -18,7 +19,7 @@ public class PoolManager : Singleton<PoolManager> {
         {
             if (card.id == cardId)
             {
-                card.gameObject.SetActive(true);
+                //card.gameObject.SetActive(true);
                 handCardsPool.Remove(card);
                 return card;
             }

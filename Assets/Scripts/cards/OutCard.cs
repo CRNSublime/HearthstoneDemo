@@ -7,7 +7,9 @@ public class OutCard : Card {
     //嘲讽 战吼 亡语 冲锋 潜行 圣盾 持续光环 
     GameObject tuantObj;
     bool getUp = false;
+    TextMesh damageTxt;
     public Rigidbody cardRig;
+    public bool invincible;
     void Awake()
     {
         Init();
@@ -21,7 +23,9 @@ public class OutCard : Card {
         tuantObj = transform.Find("cf").gameObject;
         //useGreen = transform.Find(GameData.CardPrefabPath[(int)GameData.PathType.CanUse]).gameObject;
         cardRig = gameObject.GetComponent<Rigidbody>();
-        arrowObj = GameObject.Find("arrow");
+        //arrowObj = GameObject.Find("arrow");
+        damageTxt = transform.Find("damageObj/damage").GetComponent<TextMesh>();
+        DamageControl(false);
     }
 
     public void TauntEffect()
@@ -61,14 +65,14 @@ public class OutCard : Card {
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = cardPos.z;
         Vector3 mousPosInWorld = Camera.main.ScreenToWorldPoint(mousePos);
-        UIController.instance.InitArrowSign(arrowObj, transform.localPosition, mousPosInWorld);
+        UIController.instance.InitArrowSign(GameData.arrowObj, transform.localPosition, mousPosInWorld);
     }
 
     void OnMouseUp()
     {
         Debug.Log(" ======= OutCard Up ====== ");
         //Cursor.visible = true;
-        arrowObj.SetActive(false);
+        GameData.arrowObj.SetActive(false);
         getUp = false;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit rayhit;
@@ -99,5 +103,17 @@ public class OutCard : Card {
         defence = def;
     }
 
-
+    public void DamageControl(bool isShow, int damage = 0)
+    {
+        if (invincible)
+            return;
+        GameObject damageObj = damageTxt.gameObject.transform.parent.gameObject;
+        damageObj.SetActive(isShow);
+        if(isShow)
+        {
+            string damageStr = "-" + damage.ToString();
+            damageTxt.text = damageStr;
+            defence -= damage; 
+        }
+    }
 }

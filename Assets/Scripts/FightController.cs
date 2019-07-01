@@ -9,10 +9,12 @@ public class FightController : Singleton<FightController> {
         Vector3 oriPos = attacker.transform.localPosition;
         Tween tweenGo = attacker.transform.DOMove(victim.transform.localPosition, 0.5f, false);
         tweenGo.OnComplete(() => {
-            attacker.defence -= victim.attack;
-            victim.defence -= attacker.attack;
+            attacker.DamageControl(true, victim.attack);
+            victim.DamageControl(true, attacker.attack);
             attacker.transform.DOMove(oriPos, 0.5f).OnComplete(() =>
             {
+                attacker.DamageControl(false);
+                victim.DamageControl(false);
                 attacker.cardRig.useGravity = true;
                 attacker.cardRig.isKinematic = false;
             });

@@ -108,7 +108,7 @@ public class Card : MonoBehaviour {
 
     //public string outCardPath = "Prefabs/normalRe"; // 战场随从模型
     //public Transform outCardParent; // 战场模型父节点
-    public GameObject arrowObj;
+    //public GameObject arrowObj;
 
     public MeshRenderer mainPic;    // 卡牌图片
     public MeshRenderer colorPic;  // 卡牌质量

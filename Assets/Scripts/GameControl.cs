@@ -18,9 +18,10 @@ public class GameControl : MonoBehaviour {
         Texture2D handMouse = Resources.Load<Texture2D>("Cursor/down");
         Cursor.SetCursor(handMouse, Vector3.zero, CursorMode.Auto);
 
-        CardManager<Retinue>.instance.InitHandCard((int)GameData.GameCards.CARD_LSXY);
-        CardManager<Retinue>.instance.InitHandCard((int)GameData.GameCards.CARD_TSTG);
-        CardManager<Retinue>.instance.InitHandCard((int)GameData.GameCards.CARD_LSXY);
+        //CardManager<Retinue>.instance.InitHandCard((int)GameData.GameCards.CARD_LSXY);
+        //CardManager<Retinue>.instance.InitHandCard((int)GameData.GameCards.CARD_TSTG);
+
+        CardManager<GunCard>.instance.InitHandCard((int)GameData.GameCards.CARD_GUN);
     }
    
 }

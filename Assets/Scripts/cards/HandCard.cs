@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class HandCard : Card {
 
-    private float outDistance = 2;
+    private float outDistance = 1;
     private Vector3 selectScale = new Vector3(1.5f, 1.5f, 1.5f);
+    private Vector3 dragScale = Vector3.one;
+
+    public bool executeLogic;
 
     void OnMouseEnter()
     {
-        Debug.Log(" ----------- Be Selected ---------- ");
+        //Debug.Log(" ----------- Be Selected ---------- ");
         oriPos = transform.position;
         oriRot = transform.eulerAngles;
         oriScale = transform.localScale;
@@ -21,13 +24,14 @@ public class HandCard : Card {
 
     void OnMouseExit()
     {
-        Debug.Log(" ----------- OnPointerExit ---------- ");
+        //Debug.Log(" ----------- OnPointerExit ---------- ");
         beSelect = false;
         transform.localScale = oriScale;
     }
 
     void OnMouseDrag()
     {
+        transform.localScale = dragScale;
         Vector3 cardPos = Camera.main.WorldToScreenPoint(transform.position);
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = cardPos.z;
@@ -37,6 +41,7 @@ public class HandCard : Card {
 
     void OnMouseUp()
     {
+        curPos = transform.position;
         float offset = Vector3.Distance(transform.position, oriPos);
         if (offset < outDistance)
         {
@@ -47,6 +52,7 @@ public class HandCard : Card {
             if (Round.instance.curRound == Round.RoundState.Own && canOut)
             {
                 Notification.instance.TriggerNotification((int)GameData.GameEvents.TakeOut);
+                executeLogic = true;
             }
             else
             {
@@ -57,7 +63,6 @@ public class HandCard : Card {
 
     public void ResetCard()
     {
-        Debug.Log(" ----- Reset Card ------ ");
         transform.position = oriPos;
         transform.eulerAngles = oriRot;
         transform.localScale = oriScale;
@@ -78,8 +83,8 @@ public class HandCard : Card {
         //defence = card.defense;
     }
 
-    void Update()
-    {
+    public void CheckCrystal()
+    {        
         int curCrystal = Round.instance.crystalGroup[(int)Round.RoundState.Own];
         useGreen.SetActive(curCrystal >= crystal);
         canOut = curCrystal >= crystal;

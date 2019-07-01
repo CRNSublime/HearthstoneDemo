@@ -115,11 +115,13 @@ public class GameData {
     public static Transform selfHandTrans;
     public static Transform selfOutTrans;
     public static string outCardPath;
+    public static GameObject arrowObj;
     public static void Init()
     {
         hcPoolTrans = GameObject.Find("handCardsPool").transform;
         selfHandTrans = GameObject.Find("selfHandCards").transform;
         selfOutTrans = GameObject.Find("selfOutCards").transform;
         outCardPath = "Prefabs/normalRe";
+        arrowObj = GameObject.Find("arrow");
     }
 }

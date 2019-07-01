@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-class Retinue : HandCard
+public class Retinue : HandCard
 {
     void Init()
     {
@@ -28,7 +28,6 @@ class Retinue : HandCard
 
     public void TakeEffect()
     {
-
         if (beSelect)
         {
             Debug.Log(" ------ RETINUE TAKE EFFECT ------- ");
