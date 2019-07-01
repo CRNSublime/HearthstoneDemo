@@ -1,0 +1,103 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class OutCard : Card {
+
+    //嘲讽 战吼 亡语 冲锋 潜行 圣盾 持续光环 
+    GameObject tuantObj;
+    bool getUp = false;
+    public Rigidbody cardRig;
+    void Awake()
+    {
+        Init();
+    }
+
+    void Init()
+    {
+        mainPic = transform.Find("mainPic").GetComponent<MeshRenderer>();
+        atkTxt = transform.Find("attack").GetComponent<TextMesh>();
+        defTxt = transform.Find("defense").GetComponent<TextMesh>();
+        tuantObj = transform.Find("cf").gameObject;
+        //useGreen = transform.Find(GameData.CardPrefabPath[(int)GameData.PathType.CanUse]).gameObject;
+        cardRig = gameObject.GetComponent<Rigidbody>();
+        arrowObj = GameObject.Find("arrow");
+    }
+
+    public void TauntEffect()
+    {
+        Debug.Log(" --=-=-=-=-  TAUNT!  -=-=-=-=-=-=-- ");
+    }
+
+    public override void InitCard(Card card)
+    {
+        base.InitCard(card);
+        
+    }
+
+    void OnMouseEnter()
+    {
+        Debug.Log(" ----------- OutCard  Be Selected ---------- ");
+    }
+
+    void OnMouseExit()
+    {
+        Debug.Log(" ----------- OutCard OnPointerExit ---------- ");
+        
+    }
+
+    void OnMouseDrag()
+    {
+        if (!getUp)
+        {
+            oriPos = transform.localPosition;
+            transform.localPosition = oriPos + new Vector3(0, 0.2f, 0);
+            cardRig.useGravity = false;
+            cardRig.isKinematic = true;
+            getUp = true;
+        }
+        //Cursor.visible = false;
+        Vector3 cardPos = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = cardPos.z;
+        Vector3 mousPosInWorld = Camera.main.ScreenToWorldPoint(mousePos);
+        UIController.instance.InitArrowSign(arrowObj, transform.localPosition, mousPosInWorld);
+    }
+
+    void OnMouseUp()
+    {
+        Debug.Log(" ======= OutCard Up ====== ");
+        //Cursor.visible = true;
+        arrowObj.SetActive(false);
+        getUp = false;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit rayhit;
+        if(Physics.Raycast(ray, out rayhit))
+        {
+            GameObject go = rayhit.collider.gameObject;
+            OutCard card = go.GetComponent<OutCard>();
+            Hero hero = go.GetComponent<Hero>();
+            if (card)
+            {
+                FightController.instance.Attack(this, card);
+            }
+            else if(hero)
+            {
+                FightController.instance.Attack(this, hero);
+            }
+            else
+            {
+                cardRig.useGravity = true;
+                cardRig.isKinematic = false;
+            }
+        }
+    }
+
+    public void ChangeAttributes(int atk, int def)
+    {
+        attack = atk;
+        defence = def;
+    }
+
+
+}

@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3d865fcb994db44b8384f89dbabc3c, type: 3}
+  m_Name: CardsAsset
+  m_EditorClassIdentifier: 
+  cardsList:
+  - ID: 1001
+    name: "\u84DD\u9CC3\u5C0F\u9C7C"
+    mainSprite: MainPic/CS2_3
+    color: 1
+    desc: "\u51B2\u950B\uFF1A\u5C0F\u9C7C\u4EBA\uFF01"
+    crystalCost: 5
+    attack: 3
+    defense: 4
+    profession: 0
+    race: 0
+    model: Prefabs/openm
+  - ID: 1002
+    name: "\u706B\u67AA\u624B"
+    mainSprite: MainPic/CS2_1
+    color: 0
+    desc: "\u6218\u543C\uFF1A\u7ED9\u4F60\u4E00\u67AA"
+    crystalCost: 6
+    attack: 5
+    defense: 4
+    profession: 1
+    race: 2
+    model: Prefabs/openm
+  - ID: 1003
+    name: "\u5C0F\u9C7C\u4EBA"
+    mainSprite: MainPic/CS2_3
+    color: 2
+    desc: "\u51B2\u950B\uFF1A\u4E4C\u62C9\u4E4C\u62C9"
+    crystalCost: 7
+    attack: 2
+    defense: 3
+    profession: 2
+    race: 1
+    model: Prefabs/openm
+  - ID: 1004
+    name: "\u732B\u5934\u9E70"
+    mainSprite: MainPic/CS2_4
+    color: 3
+    desc: "\u6C89\u9ED8\u4E00\u4E2A\u53CB\u65B9\u968F\u4ECE"
+    crystalCost: 8
+    attack: 7
+    defense: 1
+    profession: 3
+    race: 1
+    model: Prefabs/openm
+  - ID: 1005
+    name: "\u5B88\u536B\u8005"
+    mainSprite: MainPic/CS2_2
+    color: 3
+    desc: "\u5632\u8BBD\uFF1A\u5854\u65AF\u4E01\u72D7"
+    crystalCost: 9
+    attack: 8
+    defense: 3
+    profession: 4
+    race: 0
+    model: Prefabs/openm
+  assetName: CardsAsset
