@@ -6,30 +6,18 @@ public class GunCard : Retinue {
 
     int damageValue = 2;
 
-    private void Damage()
-    {
-        Vector3 cardPos = Camera.main.WorldToScreenPoint(curPos);
-        Vector3 mousePos = Input.mousePosition;
-        mousePos.z = cardPos.z;
-        Vector3 mousPosInWorld = Camera.main.ScreenToWorldPoint(mousePos);
-        UIController.instance.InitArrowSign(GameData.arrowObj, curPos, mousPosInWorld);
-    }
-
     void Update()
     {
-        CheckCrystal();
         if (!executeLogic)
             return;
-        Damage();
-        if (Input.GetMouseButtonDown(0))
+        DrawArrow();
+        GameObject go = RayReturn();
+        if(go)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit rayhit;
-            if (Physics.Raycast(ray, out rayhit))
+            if (go != gameObject)
             {
-                GameObject obj = rayhit.collider.gameObject;
-                OutCard card = obj.GetComponent<OutCard>();
-                Hero hero = obj.GetComponent<Hero>();
+                OutCard card = go.GetComponent<OutCard>();
+                Hero hero = go.GetComponent<Hero>();
                 if (card)
                 {
                     executeLogic = false;

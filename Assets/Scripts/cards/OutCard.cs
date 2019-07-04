@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class OutCard : Card {
 
     //嘲讽 战吼 亡语 冲锋 潜行 圣盾 持续光环 
+    public List<GameData.CardMechanism> mechanisms = new List<GameData.CardMechanism>();
+
     GameObject tuantObj;
     bool getUp = false;
     TextMesh damageTxt;
@@ -47,7 +49,10 @@ public class OutCard : Card {
     void OnMouseExit()
     {
         Debug.Log(" ----------- OutCard OnPointerExit ---------- ");
-        
+        if(getUp)
+        {
+
+        }
     }
 
     void OnMouseDrag()
@@ -56,8 +61,7 @@ public class OutCard : Card {
         {
             oriPos = transform.localPosition;
             transform.localPosition = oriPos + new Vector3(0, 0.2f, 0);
-            cardRig.useGravity = false;
-            cardRig.isKinematic = true;
+            ChangeRigBody(false);
             getUp = true;
         }
         //Cursor.visible = false;
@@ -79,6 +83,11 @@ public class OutCard : Card {
         if(Physics.Raycast(ray, out rayhit))
         {
             GameObject go = rayhit.collider.gameObject;
+            if (go == gameObject)
+            {
+                ChangeRigBody(true);
+                return;
+            }
             OutCard card = go.GetComponent<OutCard>();
             Hero hero = go.GetComponent<Hero>();
             if (card)
@@ -91,10 +100,15 @@ public class OutCard : Card {
             }
             else
             {
-                cardRig.useGravity = true;
-                cardRig.isKinematic = false;
+                ChangeRigBody(true);
             }
         }
+    }
+
+    public void ChangeRigBody(bool enabled)
+    {
+        cardRig.useGravity = enabled;
+        cardRig.isKinematic = !enabled;
     }
 
     public void ChangeAttributes(int atk, int def)
@@ -113,7 +127,12 @@ public class OutCard : Card {
         {
             string damageStr = "-" + damage.ToString();
             damageTxt.text = damageStr;
-            defence -= damage; 
+            defence -= damage;
+            damageObj.transform.localScale = Vector3.zero;
+            damageObj.transform.DOScale(Vector3.one * 0.12f, 0.4f).OnComplete(() =>
+            {
+                damageObj.SetActive(false);
+            });
         }
     }
 }

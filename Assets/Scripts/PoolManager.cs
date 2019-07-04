@@ -5,11 +5,11 @@ using UnityEngine;
 public class PoolManager : Singleton<PoolManager> {
 
     List<HandCard> handCardsPool = new List<HandCard>();
-    public void AddHandCardsPool(Card handCard)
+    public void AddHandCardsPool(HandCard handCard)
     {
         //handCard.gameObject.SetActive(false);
         handCard.transform.position = new Vector3(100, 100, 100);
-        handCardsPool.Add((HandCard)handCard);
+        handCardsPool.Add(handCard);
         handCard.transform.SetParent(GameData.hcPoolTrans);
     }
 

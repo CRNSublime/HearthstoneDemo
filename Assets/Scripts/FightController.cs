@@ -13,10 +13,7 @@ public class FightController : Singleton<FightController> {
             victim.DamageControl(true, attacker.attack);
             attacker.transform.DOMove(oriPos, 0.5f).OnComplete(() =>
             {
-                attacker.DamageControl(false);
-                victim.DamageControl(false);
-                attacker.cardRig.useGravity = true;
-                attacker.cardRig.isKinematic = false;
+                attacker.ChangeRigBody(true);
             });
         });
     }

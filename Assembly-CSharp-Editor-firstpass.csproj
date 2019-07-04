@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F15AF2EA-3D70-BF06-2E24-1C1134DCDACE}</ProjectGuid>
+    <ProjectGuid>{92E49ECE-6FFA-0F30-FA54-C4405175D880}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor-firstpass</AssemblyName>
@@ -120,10 +120,37 @@
  <HintPath>D:/Program Files/Unity2017.4.3f1/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="System.Data">
- <HintPath>E:/svnHy/local/LocalPro/ShaderTest/Assets/Plugins/System.Data.dll</HintPath>
+ <HintPath>E:/MyGitHub/HearthstoneDemo/Assets/Plugins/System.Data.dll</HintPath>
+ </Reference>
+ <Reference Include="DemiLib">
+ <HintPath>E:/MyGitHub/HearthstoneDemo/Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+ </Reference>
+ <Reference Include="DemiEditor">
+ <HintPath>E:/MyGitHub/HearthstoneDemo/Assets/Plugins/Demigiant/DemiLib/Core/Editor/DemiEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween">
+ <HintPath>E:/MyGitHub/HearthstoneDemo/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween43">
+ <HintPath>E:/MyGitHub/HearthstoneDemo/Assets/Plugins/Demigiant/DOTween/DOTween43.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween46">
+ <HintPath>E:/MyGitHub/HearthstoneDemo/Assets/Plugins/Demigiant/DOTween/DOTween46.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween50">
+ <HintPath>E:/MyGitHub/HearthstoneDemo/Assets/Plugins/Demigiant/DOTween/DOTween50.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTweenEditor">
+ <HintPath>E:/MyGitHub/HearthstoneDemo/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTweenPro">
+ <HintPath>E:/MyGitHub/HearthstoneDemo/Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTweenProEditor">
+ <HintPath>E:/MyGitHub/HearthstoneDemo/Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
  </Reference>
  <Reference Include="EPPlus">
- <HintPath>E:/svnHy/local/LocalPro/ShaderTest/Assets/Plugins/EPPlus/EPPlus.dll</HintPath>
+ <HintPath>E:/MyGitHub/HearthstoneDemo/Assets/Plugins/EPPlus/EPPlus.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Users/Administrator/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -143,37 +170,10 @@
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/Users/Administrator/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
  </Reference>
- <Reference Include="DemiLib">
- <HintPath>E:/svnHy/local/LocalPro/ShaderTest/Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
- </Reference>
- <Reference Include="DOTween43">
- <HintPath>E:/svnHy/local/LocalPro/ShaderTest/Assets/Plugins/Demigiant/DOTween/DOTween43.dll</HintPath>
- </Reference>
- <Reference Include="DOTweenEditor">
- <HintPath>E:/svnHy/local/LocalPro/ShaderTest/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
- </Reference>
- <Reference Include="DOTween50">
- <HintPath>E:/svnHy/local/LocalPro/ShaderTest/Assets/Plugins/Demigiant/DOTween/DOTween50.dll</HintPath>
- </Reference>
- <Reference Include="DOTweenProEditor">
- <HintPath>E:/svnHy/local/LocalPro/ShaderTest/Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
- </Reference>
- <Reference Include="DOTween">
- <HintPath>E:/svnHy/local/LocalPro/ShaderTest/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
- </Reference>
- <Reference Include="DOTweenPro">
- <HintPath>E:/svnHy/local/LocalPro/ShaderTest/Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
- </Reference>
- <Reference Include="DemiEditor">
- <HintPath>E:/svnHy/local/LocalPro/ShaderTest/Assets/Plugins/Demigiant/DemiLib/Core/Editor/DemiEditor.dll</HintPath>
- </Reference>
- <Reference Include="DOTween46">
- <HintPath>E:/svnHy/local/LocalPro/ShaderTest/Assets/Plugins/Demigiant/DOTween/DOTween46.dll</HintPath>
- </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{65173ED4-1F57-53D5-13BA-7879068E8BE4}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{E78ABA96-6708-B5F9-8016-9903FBEAE79A}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

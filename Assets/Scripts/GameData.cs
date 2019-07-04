@@ -37,6 +37,13 @@ public class GameData {
         TakeOut,
     }
 
+    public enum CardMechanism
+    {
+        Taunt,  // 嘲讽
+        BattleShout, // 战吼
+        Assault,  // 冲锋
+    }
+
     public enum GameCards  // 卡牌ID
     {
         CARD_LSXY = 1001,

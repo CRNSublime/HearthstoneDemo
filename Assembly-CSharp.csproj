@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{3443BF3C-EAD6-E465-BADD-506AA56CA658}</ProjectGuid>
+    <ProjectGuid>{B1A1ABF1-C1A3-9B05-8235-A63426594F4B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\cards\Magic.cs" />
      <Compile Include="Assets\Scripts\cards\OutCard.cs" />
      <Compile Include="Assets\Scripts\cards\Retinue.cs" />
+     <Compile Include="Assets\Scripts\cards\RetinueCards\GunCard.cs" />
      <Compile Include="Assets\Scripts\FightController.cs" />
      <Compile Include="Assets\Scripts\GameControl.cs" />
      <Compile Include="Assets\Scripts\GameData.cs" />
@@ -101,10 +102,28 @@
  <HintPath>D:/Program Files/Unity2017.4.3f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="System.Data">
- <HintPath>E:/svnHy/local/LocalPro/ShaderTest/Assets/Plugins/System.Data.dll</HintPath>
+ <HintPath>E:/MyGitHub/HearthstoneDemo/Assets/Plugins/System.Data.dll</HintPath>
+ </Reference>
+ <Reference Include="DemiLib">
+ <HintPath>E:/MyGitHub/HearthstoneDemo/Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween">
+ <HintPath>E:/MyGitHub/HearthstoneDemo/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween43">
+ <HintPath>E:/MyGitHub/HearthstoneDemo/Assets/Plugins/Demigiant/DOTween/DOTween43.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween46">
+ <HintPath>E:/MyGitHub/HearthstoneDemo/Assets/Plugins/Demigiant/DOTween/DOTween46.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween50">
+ <HintPath>E:/MyGitHub/HearthstoneDemo/Assets/Plugins/Demigiant/DOTween/DOTween50.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTweenPro">
+ <HintPath>E:/MyGitHub/HearthstoneDemo/Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
  </Reference>
  <Reference Include="EPPlus">
- <HintPath>E:/svnHy/local/LocalPro/ShaderTest/Assets/Plugins/EPPlus/EPPlus.dll</HintPath>
+ <HintPath>E:/MyGitHub/HearthstoneDemo/Assets/Plugins/EPPlus/EPPlus.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>C:/Users/Administrator/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/UnityEngine.Analytics.dll</HintPath>
@@ -115,28 +134,10 @@
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/Users/Administrator/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
  </Reference>
- <Reference Include="DemiLib">
- <HintPath>E:/svnHy/local/LocalPro/ShaderTest/Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
- </Reference>
- <Reference Include="DOTween43">
- <HintPath>E:/svnHy/local/LocalPro/ShaderTest/Assets/Plugins/Demigiant/DOTween/DOTween43.dll</HintPath>
- </Reference>
- <Reference Include="DOTween50">
- <HintPath>E:/svnHy/local/LocalPro/ShaderTest/Assets/Plugins/Demigiant/DOTween/DOTween50.dll</HintPath>
- </Reference>
- <Reference Include="DOTween">
- <HintPath>E:/svnHy/local/LocalPro/ShaderTest/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
- </Reference>
- <Reference Include="DOTweenPro">
- <HintPath>E:/svnHy/local/LocalPro/ShaderTest/Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
- </Reference>
- <Reference Include="DOTween46">
- <HintPath>E:/svnHy/local/LocalPro/ShaderTest/Assets/Plugins/Demigiant/DOTween/DOTween46.dll</HintPath>
- </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{65173ED4-1F57-53D5-13BA-7879068E8BE4}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{E78ABA96-6708-B5F9-8016-9903FBEAE79A}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

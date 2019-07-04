@@ -31,7 +31,7 @@ public class Retinue : HandCard
         if (beSelect)
         {
             Debug.Log(" ------ RETINUE TAKE EFFECT ------- ");
-            CardManager<OutCard>.instance.InitOutCard(this);
+            CardManager.instance.InitOutCard<OutCard>(this);
             beSelect = false;
         }
     }
